@@ -38,8 +38,8 @@ class Point {
     }
 }
 
-class Circle extends Shape {
-    Point center;   // 원의 원점 좌표
+class Circle extends Shape {    // Circle과 Shape는 상속관계
+    Point center;   // 원의 원점 좌표 / Circle과 Point는 포함관계
     int r;
 
     Circle(){

@@ -1,38 +1,31 @@
 package test;
 
-class Tv {
-    boolean power;
-    int channel;
-
-    void power(){
-        power = !power;
-    }
-    void channelUp(){
-        ++channel;
-    }
-    void channelDown(){
-        --channel;
-    }
-    
-}
-
-class CaptionTv extends Tv {
-    boolean caption;
-    void displayCaption(String text){
-        if(caption){
-            System.out.println(text);
-        }
-    }
-}
-
 class Test {
+
     public static void main(String[] args) {
-        CaptionTv ctv = new CaptionTv();
-        ctv.channel = 10;
-        ctv.channelUp();
-        System.out.println(ctv.channel);
-        ctv.displayCaption("Hello World");
-        ctv.caption = true;
-        ctv.displayCaption("Hello World");
+        Parent p = new Parent();
+        Child c = new Child();
+        System.out.println(p.x);
+        System.out.println(c.x);
+        p.method();
+        c.method();
     }
+
+}
+
+
+class Parent{
+    int x = 100;
+    void method(){
+        System.out.println("parent");
+    }
+}
+
+class Child extends Parent{
+    int x = 200;
+   void method(){
+       System.out.println(x);
+       System.out.println(super.x);
+       System.out.println(this.x);
+   }
 }
